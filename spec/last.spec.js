@@ -1,7 +1,7 @@
 describe('last', function() {
   it('should exist', function() {
     expect(_.last).to.exist;
-    //inputs: 1 array and a number
+    //inputs: 1 array and a number 
     //outputs: 1 array or 1 value of datatype depending on number of arguments passed in
     //the passed in array can contain any datatypes... all numbers, all strings, all booleans, mixede arrays, nested arrays, etc.
     //if just an array is passed in then return last element of array.
