@@ -1,17 +1,24 @@
 describe('each', function() {
+  //inputs: 1 array or object (list), 1 function (value, key, list)
+  //outputs: array or object matching the input datatype
+  //constaints: cannot pass in objects with a numeric length property
+  //assumptions: iteratee is always a function, the list will always be an array or object
   it('should exist', function() {
     expect(_.each).to.exist;
-    //inputs: 1 array or object (list), 1 function (value, key, list)
-    //outputs: array or object matching the input datatype
-    //constaints: cannot pass in objects with a numeric length property
-    //regardless if a context is passed in or not, the function returns the list
-    //if context object is passed in, its length should equal the length of the list passed in
-    //if there is no iteratee, return the list
-    //if context is passed in but is not an object, function should return the list but context should be undefined*?
-    //typeof iteratee should always be a function- if iteratee is not a function, the each func would return undefined
-    //if the iteratee is passed improper datatype from list, it should not affect the return list
-    //if list is empty return empty list
-    //if list is undefined return undefined
-    //check for the typeof list and if list is not an array or object, return undefined
+  });
+  //if list is empty return empty list
+  it('should return an empty array if given array is empty', function() {
+    expect(_.each([])).to.deep.equal([]);
+  });
+  it('should return an empty object if given an empty object', function() {
+    expect(_.each({})).to.deep.equal({});
+  });
+  //if passed a primitive datatype return that value
+  it('should return number if passed in number', function() {
+    expect(_.each(23)).to.equal(23);
+  });
+  it('should return the original list regardless of iteratee function', function() {
+    let doubleNum = function(number) { return number * 2; };
+    expect(_.each([1, 2, 3, 4], doubleNum)).to.deep.equal([1, 2, 3, 4]);
   });
 });
