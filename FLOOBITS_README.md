@@ -5,6 +5,3 @@ click on the menu in the upper left to upload or create files.
 
 If you're using a native editor, you might want to read our help docs at 
 https://floobits.com/help/plugins/
-
-
-
